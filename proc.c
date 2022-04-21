@@ -538,7 +538,7 @@ cps()
 	struct proc *p;
 	sti();
 	acquire(&ptable.lock);
-	cprintf("name \t pid \t state \t");
+	cprintf("name \t pid \t state \t\n");
 	for(p=ptable.proc; p<&ptable.proc[NPROC]; p++){
 		if(p->state == SLEEPING)
 			cprintf("%s \t %d \t SLEEPING \t \n", p->name, p->pid);
